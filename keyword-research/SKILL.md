@@ -224,6 +224,25 @@ TEMPLATE ELEMENTS:
 
 You can't pursue everything at once. Prioritize based on the effort-to-impact ratio.
 
+#### KOB Score (Keyword Opposition to Benefit)
+
+For data-driven prioritization when SemRush API data is available, calculate the KOB score:
+
+```
+KOB Score = (Search Volume × CTR Estimate × Business Value) / Keyword Difficulty
+
+Where:
+- CTR Estimate: Position 1 = 0.30, Pos 2 = 0.15, Pos 3 = 0.10 (use 0.15 as default)
+- Business Value: 3 = direct revenue keyword, 2 = consideration keyword, 1 = awareness keyword
+- Keyword Difficulty: 1-100 from SemRush (use max(KD, 1) to avoid division by zero)
+```
+
+**Priority tiers:**
+- KOB > 50: High priority — target first
+- KOB 20-50: Medium priority — target in months 2-3
+- KOB 5-20: Low priority — target later
+- KOB < 5: Deprioritize unless strategically important
+
 #### The Quick Win Matrix
 
 ```
@@ -277,6 +296,66 @@ Outline:
   - Lead magnet tie-in: [If applicable]
 Differentiation notes: [Why should Google rank this over what's already on page 1?]
 ```
+
+## API Integrations
+
+When API keys are available, use these tools for live data. All calls via Bash tool using `curl`.
+
+### SemRush API
+
+Requires `SEMRUSH_API_KEY` in environment or `~/.claude/.env.global`. Base URL: `https://api.semrush.com/`
+
+| Endpoint | type param | Use for |
+|----------|-----------|---------|
+| Keyword Overview | `phrase_all` | Volume, CPC, competition, trend |
+| Related Keywords | `phrase_related` | Expand seed terms |
+| Keyword Questions | `phrase_questions` | FAQ/PAA opportunities |
+| Domain Organic | `domain_organic` | Competitor keyword gaps |
+| Keyword Difficulty | `phrase_kdi` | KD score (0-100) |
+
+```bash
+# Keyword overview
+https://api.semrush.com/?type=phrase_all&key={KEY}&phrase={keyword}&database=us&export_columns=Ph,Nq,Cp,Co,Nr,Td
+
+# Related keywords
+https://api.semrush.com/?type=phrase_related&key={KEY}&phrase={keyword}&database=us&export_columns=Ph,Nq,Cp,Co,Nr,Td&display_limit=50
+
+# Domain organic keywords (for competitor gap analysis)
+https://api.semrush.com/?type=domain_organic&key={KEY}&domain={domain}&database=us&export_columns=Ph,Po,Nq,Cp,Co,Tr,Tc,Nr,Td&display_limit=100
+```
+
+Database codes: `us` (default), `uk`, `ca`, `au`, `de`, `fr`, `es`, `it`, `br`, `in`, `jp`
+
+### DataForSEO (Alternative/Complement)
+
+Requires `DATAFORSEO_LOGIN` and `DATAFORSEO_PASSWORD`. Useful as SemRush fallback and for bulk volume lookups (up to 700 keywords per request). Data comes directly from Google Keyword Planner.
+
+```bash
+# Bulk search volume
+curl -s -X POST "https://api.dataforseo.com/v3/keywords_data/google_ads/search_volume/live" \
+  -H "Authorization: Basic $(echo -n "${DATAFORSEO_LOGIN}:${DATAFORSEO_PASSWORD}" | base64)" \
+  -H "Content-Type: application/json" \
+  -d '[{"keywords": ["keyword1", "keyword2"], "location_code": 2840, "language_code": "en"}]'
+```
+
+Key fields: `search_volume`, `competition` (LOW/MEDIUM/HIGH), `cpc`, `monthly_searches` (12-month array for seasonality).
+Location codes: `2840` US, `2826` UK, `2124` CA, `2036` AU.
+
+**When to use DataForSEO vs SemRush:** Use SemRush for KD scores and competitor domain analysis. Use DataForSEO for bulk volume lookups and when you need Google Ads-aligned data. Cross-reference both when volumes diverge significantly.
+
+### SerpAPI (People Also Ask & Related Searches)
+
+Requires `SERPAPI_API_KEY`. Extracts PAA questions and related searches directly from live Google SERPs — data not available from SemRush.
+
+```bash
+curl -s "https://serpapi.com/search.json?q={keyword}&api_key=${SERPAPI_API_KEY}&num=10"
+```
+
+Key response sections: `related_questions` (PAA questions with snippets and source URLs), `related_searches` (Google's own related query suggestions), `organic_results` (top 10 for intent validation).
+
+**How to use:** PAA questions → FAQ section H2/H3 headings and schema entries. Related searches → additional seed expansion. Organic results → intent validation (if all top 10 are blog posts, write a blog post; if product pages, don't). Use strategically for top-priority keywords only — SerpAPI charges per search.
+
+---
 
 ## Inputs Required
 

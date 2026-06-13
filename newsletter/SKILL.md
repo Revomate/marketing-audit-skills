@@ -378,14 +378,69 @@ Read it out loud. Cut anything that doesn't earn its place. Specifically:
 | Unsubscribe rate | <0.5% per send | <0.2% | Check frequency, relevance, and expectation match. |
 | Growth rate | 5-10%/month | 15%+ | Fix acquisition: referrals, lead magnets, content upgrades. |
 
-#### Growth Levers
+#### Growth Strategies by Stage
 
-- **Referral program:** "Share this newsletter, get [reward]." Works when the content is genuinely shareable.
-- **Content upgrades:** Bonus content for subscribers who share or engage.
-- **Cross-promotion:** Swap recommendations with complementary newsletters.
-- **Lead magnets → newsletter:** The lead magnet skill feeds directly into subscriber growth.
-- **Social proof in signup:** "Join 2,847 trades business owners who read this every Tuesday."
-- **Archive as content:** Best editions become blog posts, social threads, or SEO content.
+**Tier 1: Foundation (0 → 1,000 subscribers)**
+1. **Lead magnet** — Checklist, template, cheat sheet, toolkit, or mini-course. Must be instantly valuable. Place on landing page, blog sidebar, and exit intent popup.
+2. **Landing page** — Clear value prop above the fold, social proof (subscriber count, testimonials), sample issue, single CTA.
+3. **Content-driven signup** — Newsletter CTA on every blog post, content upgrades embedded in content (not just sidebar).
+4. **Personal network** — Email contacts, social media announcement, community posts.
+
+**Tier 2: Growth (1,000 → 10,000)**
+5. **Referral program** — Reward subscribers who refer others. Milestone rewards: 1 referral = bonus content, 5 = exclusive access, 10 = merchandise/call. Tools: SparkLoop, ReferralHero, or built-in (Beehiiv, ConvertKit).
+6. **Cross-promotions** — Swap recommendations with complementary newsletters (similar audience, not competing). Paid cross-promotion: $1–5 per subscriber.
+7. **Social media funnel** — Post newsletter excerpts on LinkedIn/X with "Subscribe for more." Turn newsletter insights into threads.
+8. **SEO-driven pages** — Archive best editions as searchable blog posts. Create "best [topic] newsletters" comparison pages targeting search.
+
+**Tier 3: Scale (10,000+)**
+9. **Paid acquisition** — Facebook/Instagram ads to landing page, $1–5 CPA target.
+10. **Podcast/video guest appearances** — Mention newsletter as CTA.
+11. **Giveaways** — Viral giveaway campaigns (KingSumo, Gleam).
+12. **Acquisitions** — Buy smaller newsletters in your niche.
+
+#### Monetization
+
+| Model | When to Start | Revenue Potential |
+|-------|--------------|-------------------|
+| Sponsorships | 1,000+ subscribers | $25–50 CPM |
+| Paid subscriptions | 5,000+ free subscribers | $5–20/month |
+| Affiliate links | Any size | 5–15% of clicks convert |
+| Digital products | 2,000+ subscribers | $10–500 per product |
+| Consulting/services | Any size | Varies |
+| Courses | 5,000+ subscribers | $50–500 per student |
+
+**Sponsorship CPM benchmarks:**
+- General/consumer: $15–25 CPM
+- Business/marketing: $25–50 CPM
+- Developer/technical: $30–60 CPM
+- Finance/investing: $40–80 CPM
+
+#### Re-engagement Campaign
+
+For subscribers who haven't opened in 60+ days:
+
+```
+Email 1 (Day 0): "Still interested in [topic]? Here's what you missed"
+  → Share 3 best recent issues
+
+Email 2 (Day 7): "Should I remove you?"
+  → Direct ask: click to stay, or we'll unsubscribe you
+
+Email 3 (Day 14): "Last chance — we're cleaning our list"
+  → Final warning, then remove non-openers
+```
+
+#### Deliverability Checklist
+
+| Check | Why |
+|-------|-----|
+| SPF record | Proves you're authorized to send from your domain |
+| DKIM signing | Cryptographic signature preventing spoofing |
+| DMARC policy | Tells receivers what to do with failed auth |
+| Custom sending domain | Avoid shared IP reputation issues |
+| Sunset inactive subscribers | Remove non-openers after 90 days |
+
+**Avoid spam filters:** Maintain 80/20 text-to-image ratio. Include unsubscribe link (required by law). Use a real reply-to address. Avoid URL shorteners (bit.ly triggers spam filters). Warm up new sending domains gradually.
 
 ---
 
