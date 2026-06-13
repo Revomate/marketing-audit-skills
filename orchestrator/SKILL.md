@@ -64,14 +64,18 @@ Before recommending anything, audit what's already in place. Check for each elem
 | Element | Status | Skill That Builds It |
 |---------|--------|---------------------|
 | **Traffic strategy** (how people find you) | ☐ Have / ☐ Missing | `keyword-research` + `dtc-ad-creative` + `linkedin-content` + `thread-writer` |
+| **Paid social** (Meta/Google campaigns) | ☐ Have / ☐ Missing | `facebook-ads` + `google-ads` |
+| **Platform presence** (Reddit, Bluesky, podcast, social) | ☐ Have / ☐ Missing | `social-content` + `reddit-marketing` + `bluesky` + `podcast-marketing` |
 | **Conversion path** (visitor → lead → customer) | ☐ Have / ☐ Missing | Multiple skills in sequence |
 | **Nurture system** (how you stay in touch) | ☐ Have / ☐ Missing | `email-sequences` + `newsletter` |
-| **Measurement** (how you know what's working) | ☐ Have / ☐ Missing | `google-analytics` + `ab-test-setup` |
-| **CRO** (optimizing what you have) | ☐ Have / ☐ Missing | `page-cro` |
-| **SEO health** (technical + content gaps) | ☐ Have / ☐ Missing | `seo-audit` + `content-gap-analysis` + `serp-analyzer` |
+| **Measurement** (how you know what's working) | ☐ Have / ☐ Missing | `google-analytics` + `ab-test-setup` + `google-ads-report` + `youtube-analytics` |
+| **CRO** (optimizing what you have) | ☐ Have / ☐ Missing | `page-cro` + `onboarding-cro` + `signup-flow-cro` |
+| **SEO health** (technical + content gaps) | ☐ Have / ☐ Missing | `seo-audit` + `content-gap-analysis` + `serp-analyzer` + `backlink-audit` + `search-console` + `schema-markup` |
 | **Content calendar** (scheduled publishing cadence) | ☐ Have / ☐ Missing | `content-calendar` |
 | **CRM / outbound** (lead management, B2B outreach) | ☐ Have / ☐ Missing | `hubspot` + `apollo-outreach` |
-| **Launch readiness** (go-to-market plan) | ☐ Have / ☐ Missing | `launch-strategy` |
+| **Referral / affiliate** (word-of-mouth growth loops) | ☐ Have / ☐ Missing | `referral-program` + `affiliate-marketing` |
+| **Launch readiness** (go-to-market plan) | ☐ Have / ☐ Missing | `launch-strategy` + `product-marketing` |
+| **Demand generation** (B2B pipeline) | ☐ Have / ☐ Missing | `demand-gen` |
 
 ### Step 2: Diagnose the Bottleneck
 
@@ -164,9 +168,27 @@ ORGANIC TRAFFIC  PAID TRAFFIC                 SOCIAL TRAFFIC
 
 16. **Ready to launch?** Everything is built and you need a go-to-market plan. → Run `launch-strategy` for week-by-week playbooks.
 
-17. **Need B2B leads?** Use `apollo-outreach` to research and enrich prospects, `hubspot` to manage the pipeline.
+17. **Need B2B leads?** Use `apollo-outreach` to research and enrich prospects, `hubspot` to manage the pipeline. For full pipeline strategy, run `demand-gen` first to define the funnel architecture.
 
-18. **Everything exists but nothing is working?** Go back to the foundation. Usually positioning is off or the offer doesn't resonate. → Re-run `competitor-analysis` + `positioning-angles` with fresh research.
+18. **Ready for paid social?** `facebook-ads` for Meta (FB/IG) campaigns. `google-ads` for search/display. Always have positioning, offer, and landing page done first — paid traffic amplifies what's already converting, it doesn't fix what isn't.
+
+19. **Paid ads running but can't tell what's working?** → `google-ads-report` for Google Ads analytics. `youtube-analytics` for video performance. `ab-test-setup` for experiment design.
+
+20. **Onboarding or signup flow is leaking?** → `onboarding-cro` (activation path, setup wizard, product tours). `signup-flow-cro` (signup funnel audit). Run these when free trial → paid conversion is low.
+
+21. **Need programmatic SEO at scale?** After `keyword-research` identifies repeatable patterns (service + city, role + tool, etc.), use `programmatic-seo` to build the template + implementation. Then `seo-content-brief` to spec individual pages.
+
+22. **SEO health beyond the basics?** → `backlink-audit` (link profile analysis and toxic link detection). `search-console` (GSC data, index coverage, low-CTR keywords). `schema-markup` (structured data for rich results).
+
+23. **Need a referral or affiliate program?** → `referral-program` (viral coefficient, program design, referral page copy). `affiliate-marketing` (commission models, partner tiers, compliance). Best run after you have 1,000+ happy customers.
+
+24. **Product launch or new product line?** → `product-marketing` (April Dunford positioning framework, messaging matrix, battlecards, GTM checklists). Run before `launch-strategy` when the product itself needs positioning work.
+
+25. **Need platform-specific content?** → `social-content` (multi-platform), `reddit-marketing` (subreddit strategy), `bluesky` (AT Protocol), `podcast-marketing` (podcast strategy and repurposing). These sit downstream of `content-strategy` and `brand-voice`.
+
+26. **Need to monitor your brand?** → `brand-monitor` (mention tracking, sentiment, PR opportunities). Run when scaling to new channels or after a launch.
+
+27. **Everything exists but nothing is working?** Go back to the foundation. Usually positioning is off or the offer doesn't resonate. → Re-run `competitor-analysis` + `positioning-angles` with fresh research.
 
 #### Out-of-Order Execution Warning
 
@@ -319,6 +341,71 @@ SPRINT 5: MEASURE & OPTIMIZE (Ongoing)
 | `content-gap-analysis` | Finds missing content vs. competitors | When planning next content to produce. |
 | `serp-analyzer` | Analyzes what's ranking and why for any keyword | When preparing content briefs or auditing rankings. |
 
+#### Paid Advertising
+| Skill | What It Does | When to Use |
+|-------|-------------|-------------|
+| `facebook-ads` | Meta (FB/IG) campaign structure, audiences, ad creative | When running paid social. Requires positioning + offer + landing page first. |
+| `google-ads` | Google search/display campaign structure, RSA copy, keywords | When running paid search. High-intent traffic. |
+| `google-ads-report` | Pulls Google Ads performance data via API | When measuring and optimizing paid search campaigns. |
+| `dtc-ad-creative` | Generates performance ad concepts at volume (channel-agnostic) | When planning any paid traffic creative strategy. |
+
+#### Writing & Copy
+| Skill | What It Does | When to Use |
+|-------|-------------|-------------|
+| `copywriting` | Produces conversion-focused copy for any surface | When you need raw persuasive copy written from scratch. |
+| `copy-editing` | Edits and refines existing copy | When copy exists but needs polish, clarity, or tightening. |
+| `write-blog` | Produces SEO-optimized blog posts | When executing on `seo-content-brief` or content calendar items. |
+| `write-landing` | Produces high-converting landing page copy | When `direct-response` is too broad — landing page only. |
+| `email-subject-lines` | Generates subject line options and A/B test pairs | When improving email open rates or testing new angles. |
+
+#### Extended SEO
+| Skill | What It Does | When to Use |
+|-------|-------------|-------------|
+| `backlink-audit` | Audits domain backlink profile, flags toxic links | When investigating authority issues or a manual penalty. |
+| `search-console` | Pulls GSC performance data, index coverage, opportunities | When diagnosing organic performance or finding low-CTR keywords. |
+| `schema-markup` | Generates JSON-LD structured data for rich results | When optimizing for featured snippets and knowledge panels. |
+| `programmatic-seo` | Builds at-scale SEO page systems from repeatable patterns | After `keyword-research` identifies templatable patterns (city, industry, etc.). |
+| `seo-content-brief` | Creates detailed content briefs for writers | When handing off SEO content to a human writer or batching content creation. |
+
+#### Platform & Social
+| Skill | What It Does | When to Use |
+|-------|-------------|-------------|
+| `social-content` | Creates multi-platform posts (Twitter, LinkedIn, Instagram, TikTok) | When distributing content across social channels at volume. |
+| `reddit-marketing` | Builds authentic Reddit community strategy | When audience is active on Reddit. B2C and developer audiences especially. |
+| `bluesky` | Creates Bluesky posts and threads via AT Protocol | When targeting early adopters, journalists, and tech audiences. |
+| `podcast-marketing` | Plans podcast strategy, episodes, guests, repurposing | When building a long-form audio content channel. |
+| `video-ad-analysis` | Deconstructs video ad creatives for replicable patterns | When studying competitors' video ads or auditing your own. |
+| `youtube-analytics` | Pulls YouTube channel and video performance data | When managing a YouTube channel or measuring video ROI. |
+
+#### Growth & Monetization
+| Skill | What It Does | When to Use |
+|-------|-------------|-------------|
+| `demand-gen` | Plans B2B demand generation strategy and campaigns | When building a B2B funnel from scratch or at scale. |
+| `referral-program` | Designs referral program with viral mechanics | When you have 1,000+ happy customers and want word-of-mouth growth. |
+| `affiliate-marketing` | Designs affiliate program structure and recruitment | When scaling distribution via partner channels. |
+| `product-marketing` | Positions a product using April Dunford framework, builds GTM checklists | When launching a product or repositioning an existing one. |
+
+#### CRO (Extended)
+| Skill | What It Does | When to Use |
+|-------|-------------|-------------|
+| `onboarding-cro` | Optimizes activation flows, setup wizards, onboarding emails | When free trial → paid conversion is low. |
+| `signup-flow-cro` | Audits and optimizes signup funnel steps | When signup completion rate is below target. |
+
+#### Research & Intelligence
+| Skill | What It Does | When to Use |
+|-------|-------------|-------------|
+| `brand-monitor` | Tracks brand mentions, sentiment, PR opportunities | When scaling to new channels or post-launch. |
+| `domain-research` | WHOIS lookup, domain availability, marketplace valuation | When evaluating a new domain or researching competitors. |
+| `marketing-ideas` | 139 proven tactics organized by category, stage, budget | When brainstorming or stuck on what to try next. |
+
+#### Notification Bots
+| Skill | What It Does | When to Use |
+|-------|-------------|-------------|
+| `slack-bot` | Sends Slack messages, Block Kit designs, announcements | When automating Slack notifications from marketing workflows. |
+| `discord-bot` | Sends Discord messages via webhook or API | When managing a Discord community or automating announcements. |
+| `telegram-bot` | Sends Telegram channel posts and polls | When running a Telegram channel or community. |
+| `feishu-lark` | Sends Feishu/Lark messages via webhook | When using Feishu/Lark as the team communication platform. |
+
 #### Tools & Integrations
 | Skill | What It Does | When to Use |
 |-------|-------------|-------------|
@@ -328,9 +415,10 @@ SPRINT 5: MEASURE & OPTIMIZE (Ongoing)
 #### Utility
 | Skill | What It Does | When to Use |
 |-------|-------------|-------------|
-| `last30days` | Researches recent trends on Reddit + X + Web | When you need current market intelligence. |
 | `content-atomizer` | Repurposes one piece into many platform formats | After producing any long-form content. |
+| `content-repurposing` | Quick repurposing into platform-native formats | When you need a fast repurpose without full atomization depth. |
 | `skill-refiner` | Audits and improves skill output quality | After any skill produces subpar results. |
+| `blind-spot-audit` | Scans for missing channels and tactics across 11 categories | When growth stalls or you feel like you're missing something obvious. |
 
 ### Skill Stacking Patterns
 
@@ -384,6 +472,36 @@ seo-content OR newsletter (long-form) → content-atomizer (10-20+ pieces) → l
 #### Pattern 10: Growth Strategy Sprint
 ```
 competitor-analysis → growth-strategy (model + metrics) → [choose channel patterns above] → google-analytics + ab-test-setup (measure + optimize)
+```
+
+#### Pattern 11: Paid Media Launch
+```
+demand-gen (funnel architecture) → icp-builder (audiences) → write-landing (page copy) → facebook-ads + google-ads (campaigns) → page-cro (optimize) → google-ads-report + ab-test-setup (measure)
+```
+
+#### Pattern 12: Full SEO Stack
+```
+keyword-research (strategy) → seo-content-brief (per-page specs) → SEO-content (produce) → programmatic-seo (scale patterns) → schema-markup (structured data) → backlink-audit (authority) → search-console (measure)
+```
+
+#### Pattern 13: Platform Expansion
+```
+content-atomizer (from best long-form) → social-content (multi-platform) → reddit-marketing (community) → bluesky (tech/journalist audience) → podcast-marketing (audio channel) → youtube-analytics (measure video)
+```
+
+#### Pattern 14: Product Launch
+```
+product-marketing (positioning + GTM) → demand-gen (B2B funnel) → write-landing (page) → email-sequences (nurture) → facebook-ads + google-ads (paid) → launch-strategy (week-by-week execution)
+```
+
+#### Pattern 15: Referral & Affiliate Growth
+```
+referral-program (design + viral mechanics) → affiliate-marketing (partner channel) → email-sequences (referral nurture) → brand-monitor (track mentions + PR)
+```
+
+#### Pattern 16: Onboarding Optimization
+```
+google-analytics (find drop-off points) → onboarding-cro (activation flow) → signup-flow-cro (funnel audit) → email-sequences (onboarding emails) → ab-test-setup (experiments)
 ```
 
 ## Inputs Required
@@ -470,20 +588,25 @@ Before recommending any skill, verify it exists and is current. The canonical sk
 3. If any skill exists on disk but not in the registry, read its SKILL.md frontmatter and add it to your mental model (but flag it as "unaudited" in your output)
 4. If a skill's description in the registry doesn't match its current frontmatter, use the frontmatter (it's more current)
 
-### Current Skill Registry (2026-02-16)
+### Current Skill Registry (2026-06-13)
 
 | Category | Skills |
 |----------|--------|
-| Foundation | `competitor-analysis`, `positioning-angles`, `icp-builder`, `brand-voice`, `growth-strategy`, `launch-strategy`, `content-strategy` |
+| Foundation | `competitor-analysis`, `positioning-angles`, `icp-builder`, `brand-voice`, `growth-strategy`, `launch-strategy`, `content-strategy`, `product-marketing` |
 | Offers | `offer-strategist`, `hormozi-grand-slam-offer`, `plg-freemium-offer`, `continuity-subscription-offer`, `value-ladder-offer`, `tripwire-offer`, `pricing-strategy` |
-| Copy & Content | `direct-response`, `lead-magnet`, `email-sequences`, `newsletter`, `seo-content`, `content-atomizer`, `customer-story` |
-| Traffic | `keyword-research`, `dtc-ad-creative`, `linkedin-content`, `thread-writer`, `content-calendar`, `video-strategy` |
+| Copy & Content | `direct-response`, `copywriting`, `copy-editing`, `lead-magnet`, `email-sequences`, `email-subject-lines`, `newsletter`, `SEO-content`, `content-atomizer`, `content-repurposing`, `customer-story`, `write-blog`, `write-landing` |
+| Traffic & Distribution | `keyword-research`, `dtc-ad-creative`, `linkedin-content`, `thread-writer`, `content-calendar`, `video-strategy`, `social-content` |
+| Paid Advertising | `facebook-ads`, `google-ads`, `google-ads-report` |
+| Platform & Social | `reddit-marketing`, `bluesky`, `podcast-marketing`, `video-ad-analysis`, `youtube-analytics` |
 | Social Proof & Trust | `review-strategy`, `customer-story` |
-| Community & Brand | `community-strategy`, `founder-brand` |
-| Measurement | `google-analytics`, `ab-test-setup`, `page-cro` |
-| SEO | `seo-audit`, `content-gap-analysis`, `serp-analyzer` |
+| Community & Brand | `community-strategy`, `founder-brand`, `brand-monitor` |
+| Growth & Monetization | `demand-gen`, `referral-program`, `affiliate-marketing` |
+| Measurement | `google-analytics`, `ab-test-setup`, `page-cro`, `onboarding-cro`, `signup-flow-cro` |
+| SEO | `seo-audit`, `content-gap-analysis`, `serp-analyzer`, `backlink-audit`, `search-console`, `schema-markup`, `programmatic-seo`, `seo-content-brief` |
 | Tools | `hubspot`, `apollo-outreach` |
-| Utility | `last30days`, `skill-refiner`, `blind-spot-audit` |
+| Research | `marketing-ideas`, `domain-research` |
+| Notification Bots | `slack-bot`, `discord-bot`, `telegram-bot`, `feishu-lark` |
+| Utility | `skill-refiner`, `blind-spot-audit`, `content-repurposing` |
 
 ## Quality Checks
 
